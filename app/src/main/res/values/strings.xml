@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mascotas</string>
+    <string name="nombremascota">Nombre Mascota</string>
+    <string name="likemascota">5</string>
 </resources>
