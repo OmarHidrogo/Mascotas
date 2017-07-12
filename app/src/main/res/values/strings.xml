@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mascotas</string>
+
+    <string name="nombre_mascota">SHIH TZU</string>
+    <string name="numlikes">5</string>
+    <string name="mascotasfavoritas">MASCOTAS FAVORITAS</string>
 </resources>
