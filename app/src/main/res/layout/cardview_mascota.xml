@@ -17,51 +17,55 @@
             android:id="@+id/imgFoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/p2"/>
+            android:src="@drawable/p2" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="38dp"
             android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/btnlike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@mipmap/bonelike"
-                    android:elevation="0dp"/>
 
-                <TextView
-                    android:id="@+id/tvNombreMascota"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nombre_mascota"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/sizenombremascota"
-                    android:paddingTop="@dimen/topnombremascota"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/btnlike"
-                    android:layout_toEndOf="@+id/btnlike" />
+            <ImageButton
+                android:id="@+id/btnlike"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/tvlikes"
+                android:background="@drawable/bone1" />
 
-                <TextView
-                    android:id="@+id/tvlikes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="@string/numlikes"
-                    android:textSize="@dimen/sizenombremascota"
-                    android:paddingTop="@dimen/topnombremascota"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/btnwithlike"/>
+            <TextView
+                android:id="@+id/tvNombreMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_toEndOf="@+id/btnlike"
+                android:layout_toRightOf="@+id/btnlike"
+                android:text="@string/nombre_mascota"
+                android:textSize="@dimen/sizenombremascota"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/btnwithlike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@mipmap/bonewithlike"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+            <TextView
+                android:id="@+id/tvlikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btnwithlike"
+                android:paddingTop="@dimen/topnombremascota"
+                android:text="@string/numlikes"
+                android:textSize="@dimen/sizenombremascota"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnwithlike"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bone2"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 
