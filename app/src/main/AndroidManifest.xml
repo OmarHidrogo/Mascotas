@@ -16,7 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".likes_mascotas"></activity>
+        <activity android:name=".Mascotas_Likes"
+            android:parentActivityName=".MainActivity">
+            //Esto es para soporte versiones 4.0 o menores
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"></meta-data>
+
+        </activity>
     </application>
 
 </manifest>

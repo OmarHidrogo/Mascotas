@@ -1,9 +1,12 @@
 package com.omar_hidrogo_local.mascotas;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -13,7 +16,7 @@ import static com.omar_hidrogo_local.mascotas.R.id.rvMascotas;
 public class MainActivity extends AppCompatActivity {
 
     //Lista de Mascotas
-    ArrayList<Mascota> mascotas;
+    private ArrayList<Mascota> mascotas;
 
     //variable de lista Mascotas
     private RecyclerView listaMascotas;
@@ -37,9 +40,22 @@ public class MainActivity extends AppCompatActivity {
         inicializaAdaptador();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opciones, menu);
+        return true;
+    }
 
-
-
+  @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.top:
+                Intent intent = new Intent(this, Mascotas_Likes.class);
+                this.startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     //inicializar el adaptador
     public MascotaAdaptador adaptador;
@@ -55,11 +71,14 @@ public class MainActivity extends AppCompatActivity {
         mascotas = new ArrayList<Mascota>();
 
         //Se llena el arreglo por medio del constructor creado en la clase Mascota
-        mascotas.add(new Mascota(R.drawable.p2, "SHIH TZU"));
-        mascotas.add(new Mascota(R.drawable.p6, "CHIHUAHUEÑO"));
-        mascotas.add(new Mascota(R.drawable.p9, "PUG"));
-        mascotas.add(new Mascota(R.drawable.p8, "BOXER"));
-        mascotas.add(new Mascota(R.drawable.p7, "LABRADOR RETRIEVER"));
-
+        mascotas.add(new Mascota(R.drawable.p2, "SHIH TZU", "29"));
+        mascotas.add(new Mascota(R.drawable.p6, "CHIHUAHUEÑO", "15"));
+        mascotas.add(new Mascota(R.drawable.p9, "PUG", "25"));
+        mascotas.add(new Mascota(R.drawable.p8, "BOXER", "5"));
+        mascotas.add(new Mascota(R.drawable.p13, "LABRADOR RETRIEVER", "7"));
+        mascotas.add(new Mascota(R.drawable.p10, "BOXER", "8"));
+        mascotas.add(new Mascota(R.drawable.p11, "PUG", "30"));
+        mascotas.add(new Mascota(R.drawable.p12, "BREED COLLIE", "20"));
+        mascotas.add(new Mascota(R.drawable.p7, "LABRADOR RETRIEVER", "8"));
     }
 }
