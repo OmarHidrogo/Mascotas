@@ -10,9 +10,9 @@
     <string name="top">top</string>
 
     <string name="nombre">Nombre Completo</string>
-    <string name="email">Email</string>
+    <string name="emaildestinatario">Email a quien enviaras este correo</string>
     <string name="comentarios">Comentarios</string>
-    <string name="boton1">Enviar Comentarios</string>
+    <string name="boton1">Enviar Email</string>
 
 
     <string name="nbio">Omar Hidrogo</string>
