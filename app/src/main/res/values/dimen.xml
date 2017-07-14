@@ -4,5 +4,11 @@
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="sizenombremascota">15dp</dimen>
     <dimen name="topnombremascota">4dp</dimen>
+    <dimen name="registro">15dp</dimen>
+    <dimen name="tvnombre">30dp</dimen>
+    <dimen name="topnombre">50dp</dimen>
+    <dimen name="sizenombre">20dp</dimen>
+    <dimen name="leftfoto">130dp</dimen>
+    <dimen name="topfoto">35dp</dimen>
 
 </resources>

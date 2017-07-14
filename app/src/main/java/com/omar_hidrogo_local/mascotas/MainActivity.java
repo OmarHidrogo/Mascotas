@@ -52,9 +52,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.top:
                 Intent intent = new Intent(this, Mascotas_Likes.class);
                 this.startActivity(intent);
-            default:
-                return super.onOptionsItemSelected(item);
+                break;
+            case R.id.mContact:
+                Intent intent2 = new Intent(this, Contacto.class);
+                this.startActivity(intent2);
+                break;
+            case R.id.mAbout:
+                Intent intent3 = new Intent(this, Acerca_de.class);
+                this.startActivity(intent3);
+
         }
+      return super.onOptionsItemSelected(item);
     }
 
     //inicializar el adaptador

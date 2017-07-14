@@ -4,9 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     //se creo un layout para el menu de opciones
 
-   <item
-        android:orderInCategory="100">
+    <item
+        android:id="@+id/mContact"
+        android:orderInCategory="100"
+        android:title="@string/menu_contact">
     </item>
+
+   <item
+       android:id="@+id/mAbout"
+        android:orderInCategory="101"
+       android:title="@string/menu_about">
+    </item>
+
 
     <item
         android:id="@+id/top"

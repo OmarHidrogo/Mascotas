@@ -21,7 +21,23 @@
             //Esto es para soporte versiones 4.0 o menores
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"></meta-data>
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".Contacto"
+            android:parentActivityName=".MainActivity">
+            //Esto es para soporte versiones 4.0 o menores
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
+        <activity android:name=".Acerca_de"
+            android:parentActivityName=".MainActivity">
+            //Esto es para soporte versiones 4.0 o menores
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
 
         </activity>
     </application>
