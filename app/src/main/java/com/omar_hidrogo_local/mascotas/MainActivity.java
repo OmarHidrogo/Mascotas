@@ -1,25 +1,29 @@
 package com.omar_hidrogo_local.mascotas;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.omar_hidrogo_local.mascotas.adaptador.PageAdapter;
+import com.omar_hidrogo_local.mascotas.fragment.FragmentPerfilDog;
+import com.omar_hidrogo_local.mascotas.fragment.Fragment_RecyclerView;
 
 import java.util.ArrayList;
 
 //importar el id de RECYCLERVIEW asignado en activity_main
-import static com.omar_hidrogo_local.mascotas.R.id.rvMascotas;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    //Lista de Mascotas
-    private ArrayList<Mascota> mascotas;
-
-    //variable de lista Mascotas
-    private RecyclerView listaMascotas;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
 
     @Override
@@ -27,17 +31,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //enlazar la variable de tipo RecyclerView al id del layout
-        listaMascotas = (RecyclerView) findViewById(rvMascotas);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        //declarar el administrador del recyclerview
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        setUpViewPager();
 
-        //la lista de mascotas ligarla al LinearLayoutManager
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        inicializaAdaptador();
+        if(toolbar != null){
+            setSupportActionBar(toolbar);
+        }
+    }
+
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new Fragment_RecyclerView());
+        fragments.add(new FragmentPerfilDog());
+        return fragments;
+    }
+
+    private void setUpViewPager() {
+
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.icons8_dog_house_48);
+        tabLayout.getTabAt(1).setIcon(R.drawable.icons8_dog_48);
     }
 
     @Override
@@ -65,28 +83,8 @@ public class MainActivity extends AppCompatActivity {
       return super.onOptionsItemSelected(item);
     }
 
-    //inicializar el adaptador
-    public MascotaAdaptador adaptador;
-    private  void inicializaAdaptador(){
-        adaptador = new MascotaAdaptador(mascotas, this);
-        listaMascotas.setAdapter(adaptador);
-    }
 
 
-    // inicializar  la lista de Mascotas mediante el constructor de Mascota
-    public  void  inicializarListaMascotas(){
 
-        mascotas = new ArrayList<Mascota>();
 
-        //Se llena el arreglo por medio del constructor creado en la clase Mascota
-        mascotas.add(new Mascota(R.drawable.p2, "SHIH TZU", "29"));
-        mascotas.add(new Mascota(R.drawable.p6, "CHIHUAHUEÑO", "15"));
-        mascotas.add(new Mascota(R.drawable.p9, "PUG", "25"));
-        mascotas.add(new Mascota(R.drawable.p8, "BOXER", "5"));
-        mascotas.add(new Mascota(R.drawable.p13, "LABRADOR RETRIEVER", "7"));
-        mascotas.add(new Mascota(R.drawable.p10, "BOXER", "8"));
-        mascotas.add(new Mascota(R.drawable.p11, "PUG", "30"));
-        mascotas.add(new Mascota(R.drawable.p12, "BREED COLLIE", "20"));
-        mascotas.add(new Mascota(R.drawable.p7, "LABRADOR RETRIEVER", "8"));
-    }
 }

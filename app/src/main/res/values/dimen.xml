@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="action_bar_elevation">4dp</dimen>
+
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="sizenombremascota">15dp</dimen>
@@ -10,5 +12,6 @@
     <dimen name="sizenombre">20dp</dimen>
     <dimen name="leftfoto">130dp</dimen>
     <dimen name="topfoto">35dp</dimen>
+
 
 </resources>

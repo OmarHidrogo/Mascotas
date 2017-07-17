@@ -1,4 +1,4 @@
-package com.omar_hidrogo_local.mascotas;
+package com.omar_hidrogo_local.mascotas.pojo;
 
 /**
  * Created by tmhidrooma on 10/07/2017.

@@ -1,4 +1,5 @@
 <resources>
+    <string name="pets">LISTA DE MASCOTAS</string>
     <string name="app_name">Mascotas</string>
 
     <string name="nombre_mascota">SHIH TZU</string>

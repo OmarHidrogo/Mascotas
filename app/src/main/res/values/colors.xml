@@ -6,4 +6,5 @@
 
     <color name="colorControlHighlight">#510106</color>
     <color name="colorButtonNormal">#7b2d32</color>
+    <color name="colorblack">#000000</color>
 </resources>

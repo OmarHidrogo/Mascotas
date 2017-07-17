@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 //importar el id de RECYCLERVIEW asignado en activity_main
+import com.omar_hidrogo_local.mascotas.adaptador.MascotaAdaptador;
+import com.omar_hidrogo_local.mascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 import static com.omar_hidrogo_local.mascotas.R.id.rvMascotasLikes;
