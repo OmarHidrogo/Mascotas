@@ -17,6 +17,11 @@ public class Mascota {
         this.likes=likes;
     }
 
+    public Mascota (int foto, String likes){
+        this.foto = foto;
+        this.likes=likes;
+    }
+
     //Se declara los geter y seter
     public int getFoto() {
         return foto;
