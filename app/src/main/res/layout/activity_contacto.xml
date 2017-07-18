@@ -6,74 +6,86 @@
     android:layout_height="match_parent"
     tools:context="com.omar_hidrogo_local.mascotas.Contacto">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/etNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/nombre"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/registro"
-            android:textStyle="italic"/>
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/til1"
-        >
-
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/emaildestinatario"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/registro"
-            android:textStyle="italic"/>
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/til2"
-        >
-
-        <EditText
-            android:id="@+id/etComentarios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/comentarios"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/registro"
-            android:textStyle="italic"/>
-
-    </android.support.design.widget.TextInputLayout>
+    <include
+        android:id="@+id/actionBar"
+        layout="@layout/actionbarcontacto"></include>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionBar">
 
-        <Button
-            android:id="@+id/btnSend"
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nombre"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/registro"
+                android:textStyle="italic"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/boton1"
-            android:textAllCaps="false"
-            android:textSize="@dimen/registro"
-            android:textStyle="italic"
-            android:theme="@style/MiBoton"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_below="@+id/til1"
+            >
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/emaildestinatario"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/registro"
+                android:textStyle="italic"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/til2"
+            >
+
+            <EditText
+                android:id="@+id/etComentarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/comentarios"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/registro"
+                android:textStyle="italic"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boton1"
+                android:textAllCaps="false"
+                android:textSize="@dimen/registro"
+                android:textStyle="italic"
+                android:theme="@style/MiBoton"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

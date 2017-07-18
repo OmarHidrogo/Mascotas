@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
 
-
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -12,22 +19,28 @@
             android:elevation="@dimen/action_bar_elevation"
             app:layout_scrollFlags="scroll|enterAlways">
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/foot"
-                android:src="@drawable/icons8_cat_footprint_48"
-                android:gravity="start"/>
+         <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/foot"
+            android:src="@drawable/icons8_ball_point_pen_48"
+            android:gravity="start"/>
 
-            <TextView
-                android:id="@+id/titlepets"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pets"
-                android:layout_gravity="center"
-                android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title"/>
+        <TextView
+            android:id="@+id/titlepets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BIOGRAFIA"
+            android:layout_gravity="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title"/>
 
         </android.support.v7.widget.Toolbar>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>
 
 
 

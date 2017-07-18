@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,9 @@ import com.omar_hidrogo_local.mascotas.fragment.Fragment_RecyclerView;
 import java.util.ArrayList;
 
 //importar el id de RECYCLERVIEW asignado en activity_main
+import static com.omar_hidrogo_local.mascotas.R.id.rvMascotas;
+import static com.omar_hidrogo_local.mascotas.R.id.toolbar;
+import static com.omar_hidrogo_local.mascotas.R.id.tabLayout;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,15 +35,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        setUpViewPager();
+       setUpViewPager();
 
+        //establecer informacion de accion bar
+        setSupportActionBar(toolbar);
+        ActionBar bar = getSupportActionBar();
+        //quitar el titulo por defecto al actionbar
         if(toolbar != null){
-            setSupportActionBar(toolbar);
+            bar.setDisplayShowTitleEnabled(false);
         }
+
     }
 
     private ArrayList<Fragment> agregarFragments(){
@@ -51,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpViewPager() {
 
-        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+       viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.icons8_dog_house_48);
         tabLayout.getTabAt(1).setIcon(R.drawable.icons8_dog_48);
     }
 
-    @Override
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_opciones, menu);
         return true;

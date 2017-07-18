@@ -1,5 +1,4 @@
 <resources>
-    <string name="pets">LISTA DE MASCOTAS</string>
     <string name="app_name">Mascotas</string>
 
     <string name="nombre_mascota">SHIH TZU</string>
@@ -17,6 +16,7 @@
 
 
     <string name="nbio">Omar Hidrogo</string>
+    <string name="pets">MASCOTAS</string>
 
 
     <string name="biografia">Omar de Jesus Hidrogo Muñoz (Torreon, Coahuila, 8 de diciembre de 1990     Actualmente Ing. en Tecnologias de la Informacion y Comunicacion

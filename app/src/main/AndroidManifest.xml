@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.omar_hidrogo_local.mascotas">
-    
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,30 +18,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Mascotas_Likes"
+        <activity
+            android:name=".Mascotas_Likes"
             android:parentActivityName=".MainActivity">
             //Esto es para soporte versiones 4.0 o menores
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
-        <activity android:name=".Contacto"
+        <activity
+            android:name=".Contacto"
             android:parentActivityName=".MainActivity">
             //Esto es para soporte versiones 4.0 o menores
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-
         </activity>
-        <activity android:name=".Acerca_de"
+        <activity
+            android:name=".Acerca_de"
             android:parentActivityName=".MainActivity">
             //Esto es para soporte versiones 4.0 o menores
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-
         </activity>
+        <activity android:name=".Actionbar"></activity>
     </application>
 
 </manifest>

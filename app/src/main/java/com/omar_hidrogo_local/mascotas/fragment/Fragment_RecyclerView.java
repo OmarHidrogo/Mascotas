@@ -16,7 +16,6 @@ import com.omar_hidrogo_local.mascotas.pojo.Mascota;
 
 import java.util.ArrayList;
 
-import static com.omar_hidrogo_local.mascotas.R.id.rvMascotas;
 
 public class Fragment_RecyclerView extends Fragment {
 
@@ -35,7 +34,7 @@ public class Fragment_RecyclerView extends Fragment {
         View v = inflater.inflate(R.layout.activity_fragment__recycler_view, container, false);
 
         //enlazar la variable de tipo RecyclerView al id del layout
-        listaMascotas = (RecyclerView) v.findViewById(rvMascotas);
+        listaMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
 
         //declarar el administrador del recyclerview
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
