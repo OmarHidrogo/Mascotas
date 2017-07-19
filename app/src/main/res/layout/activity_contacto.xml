@@ -7,13 +7,13 @@
     tools:context="com.omar_hidrogo_local.mascotas.Contacto">
 
     <include
-        android:id="@+id/actionBar"
+        android:id="@+id/actionBarcontacto"
         layout="@layout/actionbarcontacto"></include>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/actionBar">
+        android:layout_below="@+id/actionBarcontacto">
 
 
         <android.support.design.widget.TextInputLayout

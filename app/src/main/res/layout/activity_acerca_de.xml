@@ -8,11 +8,11 @@
 
 
 <include
-    android:id="@+id/actionBar"
+    android:id="@+id/actionBarAcercade"
     layout="@layout/actionbar"></include>
 
 <RelativeLayout
-    android:layout_below="@id/actionBar"
+    android:layout_below="@id/actionBarAcercade"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"

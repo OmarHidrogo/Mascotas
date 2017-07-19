@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 //importar el id de RECYCLERVIEW asignado en activity_main
 import com.omar_hidrogo_local.mascotas.adaptador.MascotaAdaptador;
 import com.omar_hidrogo_local.mascotas.pojo.Mascota;
@@ -24,6 +25,11 @@ public class Mascotas_Likes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mascotas__likes);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.actionBarmascotas);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //enlazar la variable de tipo RecyclerView al id del layout
         listaMascotas = (RecyclerView) findViewById(rvMascotasLikes);

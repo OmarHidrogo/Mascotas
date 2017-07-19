@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Mascotas_Likes">
 
-    <include android:id="@+id/actionBar"
+    <include android:id="@+id/actionBarmascotas"
         layout="@layout/actionbarmascota"></include>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@id/actionBar"
+        android:layout_below="@id/actionBarmascotas"
         android:id="@+id/rvMascotasLikes"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +39,11 @@ public class Contacto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.actionBarcontacto);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         Toast.makeText(Contacto.this, "Para validar el funcionamiento del correo  teclea tu cuenta para que te envies un EMAIL", Toast.LENGTH_LONG).show();
 
