@@ -89,8 +89,8 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/foto" />
+                    android:layout_height="110dp"
+                    android:src="@drawable/fperfil" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
