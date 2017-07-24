@@ -6,20 +6,21 @@ package com.omar_hidrogo_local.mascotas.pojo;
 
 public class Mascota {
     //Se declara las variables
+    private int id;
     private int foto;
     private String nombre;
-    private String likes;
+    private int likes;
 
     //Se declara el constructor de las dos variables
-    public Mascota(int foto, String nombre, String likes) {
+    public Mascota(int foto, String nombre, int likes, int id) {
         this.foto = foto;
         this.nombre = nombre;
         this.likes=likes;
+        this.id = id;
     }
 
-    public Mascota (int foto, String likes){
-        this.foto = foto;
-        this.likes=likes;
+    public Mascota (){
+
     }
 
     //Se declara los geter y seter
@@ -39,12 +40,20 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    public String getLikes() {
+    public int getLikes() {
         return likes;
     }
 
-    public void setLikes(String likes) {
+    public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 
