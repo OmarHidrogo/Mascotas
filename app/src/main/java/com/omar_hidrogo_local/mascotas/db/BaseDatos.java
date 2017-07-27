@@ -43,8 +43,8 @@ public class BaseDatos  extends SQLiteOpenHelper{
         String queryCrearTablaLikesMascotas = "CREATE TABLE "+ ConstanteBaseDatos.TABLE_LIKES_MASCOTAS + "("+
                 ConstanteBaseDatos.TABLE_MASCOTAS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS + " INTEGER, "+
-                ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_NUMERO_LIKES + "INTEGER, "+
-                " FOREIGN KEY (" + ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS + ") "+
+                ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_NUMERO_LIKES + " INTEGER, "+
+                "FOREIGN KEY (" + ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS + ") "+
                 "REFERENCES "+ConstanteBaseDatos.TABLE_MASCOTAS + "("+ConstanteBaseDatos.TABLE_MASCOTAS_ID+")"+
                 ")";
 
@@ -53,6 +53,7 @@ public class BaseDatos  extends SQLiteOpenHelper{
 
     }
 
+    //solo se ejecuta si solo se necesita restructurar  la base de datos
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
@@ -64,20 +65,22 @@ public class BaseDatos  extends SQLiteOpenHelper{
     public ArrayList<Mascota> obtenerTodasLasMascotas(){
         ArrayList<Mascota> mascotas = new ArrayList<>();
 
+        //SE DECLARA LA QUERY DE SELECCIONAR TODA LA BASE DE DATOS
         String query = " SELECT * FROM "+ ConstanteBaseDatos.TABLE_MASCOTAS;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor registros = db.rawQuery(query, null);
 
         while (registros.moveToNext()){
             Mascota mascotaActual = new Mascota();
+            //INDICE DE LA COLUMNA  DE LA TABLA
             mascotaActual.setId(registros.getInt(0));
             mascotaActual.setNombre(registros.getString(1));
             mascotaActual.setFoto(registros.getInt(2));
 
-            String queryLikes ="SELECT COUNT ("+ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_NUMERO_LIKES
-                    +") as likes "+" FROM "+ConstanteBaseDatos.TABLE_LIKES_MASCOTAS
-                    +" WHERE "+ ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS
-                    + " = "+ mascotaActual.getId();
+            String queryLikes ="SELECT COUNT("+ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_NUMERO_LIKES
+                    +") as likes "+" FROM "+ ConstanteBaseDatos.TABLE_LIKES_MASCOTAS +
+                    " WHERE "+ ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS +
+                    " = "+ mascotaActual.getId();
 
             Cursor registrosLikes = db.rawQuery(queryLikes, null);
             if(registrosLikes.moveToNext()){
@@ -104,17 +107,17 @@ public class BaseDatos  extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
 
         //USAR LA TABLA MASCOTA LIKES
-        db.insert(ConstanteBaseDatos.TABLE_LIKES_MASCOTAS, null,contentValues);
+        db.insert(ConstanteBaseDatos.TABLE_LIKES_MASCOTAS, null, contentValues );
         db.close();
     }
 
 
     public int obtenerLikesMascotas (Mascota mascota){
         int likes = 0;
-        String query = "SELECT COUNT("+ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_NUMERO_LIKES+")"+
-                " FROM " +ConstanteBaseDatos.TABLE_LIKES_MASCOTAS +
-                " WHERE "+ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS +
-                "="+mascota.getId();
+        String query = "SELECT COUNT("+ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_NUMERO_LIKES
+                +") FROM " + ConstanteBaseDatos.TABLE_LIKES_MASCOTAS +
+                " WHERE " + ConstanteBaseDatos.TABLE_LIKES_MASCOTAS_ID_MASCOTAS +
+                " = " + mascota.getId();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor registro = db.rawQuery(query, null);

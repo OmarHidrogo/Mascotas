@@ -12,11 +12,10 @@ public class Mascota {
     private int likes;
 
     //Se declara el constructor de las dos variables
-    public Mascota(int foto, String nombre, int likes, int id) {
+    public Mascota(int foto, String nombre, int likes) {
         this.foto = foto;
         this.nombre = nombre;
         this.likes=likes;
-        this.id = id;
     }
 
     public Mascota (){

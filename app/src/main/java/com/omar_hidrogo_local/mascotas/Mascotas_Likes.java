@@ -59,11 +59,11 @@ public class Mascotas_Likes extends AppCompatActivity {
         mascotas = new ArrayList<Mascota>();
 
         //Se llena el arreglo por medio del constructor creado en la clase Mascota
-        mascotas.add(new Mascota(R.drawable.p11, "PUG", "30"));
+      /*  mascotas.add(new Mascota(R.drawable.p11, "PUG", "30"));
         mascotas.add(new Mascota(R.drawable.p2, "SHIH TZU", "29"));
         mascotas.add(new Mascota(R.drawable.p9, "PUG", "25"));
         mascotas.add(new Mascota(R.drawable.p12, "BREED COLLIE", "20"));
-        mascotas.add(new Mascota(R.drawable.p6, "CHIHUAHUEÑO", "15"));
+        mascotas.add(new Mascota(R.drawable.p6, "CHIHUAHUEÑO", "15"));*/
 
     }
 

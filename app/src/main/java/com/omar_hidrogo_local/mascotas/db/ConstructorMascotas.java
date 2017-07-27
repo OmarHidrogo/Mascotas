@@ -2,6 +2,7 @@ package com.omar_hidrogo_local.mascotas.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 
 import com.omar_hidrogo_local.mascotas.R;
 import com.omar_hidrogo_local.mascotas.pojo.Mascota;
@@ -12,17 +13,18 @@ import java.util.ArrayList;
  * Created by tmhidrooma on 24/07/2017.
  */
 
-public class ConstructosMascotas {
+// clase donde interactua con la fuente de datos   BASE DE DATOS O WEB SERVICES
+public class ConstructorMascotas {
 
     public static final int Like = 1;
     private Context context;
 
-    public  ConstructosMascotas(Context context){
+    public ConstructorMascotas(Context context){
         this.context = context;
 
     }
 
-
+    //se declara la coleccion de datos  donde devuelve los contactos
     public ArrayList<Mascota> obtenerDatos(){
 
         BaseDatos db = new BaseDatos(context);
@@ -31,6 +33,8 @@ public class ConstructosMascotas {
     }
 
     public void insertarDiezMascotas (BaseDatos db){
+
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_NOMBRE, "PEPITO");
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.p2);
@@ -61,7 +65,7 @@ public class ConstructosMascotas {
 
         db.insertarMascotas(contentValues);
 
-        contentValues = new ContentValues();
+     /*   contentValues = new ContentValues();
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_NOMBRE, "COCO");
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.p10);
 
@@ -83,7 +87,7 @@ public class ConstructosMascotas {
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_NOMBRE, "QUIQUI");
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.p13);
 
-        db.insertarMascotas(contentValues);
+        db.insertarMascotas(contentValues);*/
     }
 
     public void darLikeMascota (Mascota mascota){

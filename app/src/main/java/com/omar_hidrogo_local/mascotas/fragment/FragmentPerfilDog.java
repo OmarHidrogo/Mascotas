@@ -13,16 +13,20 @@ import com.omar_hidrogo_local.mascotas.R;
 import com.omar_hidrogo_local.mascotas.adaptador.MascotaAdaptador;
 import com.omar_hidrogo_local.mascotas.adaptador.PerfilAdaptador;
 import com.omar_hidrogo_local.mascotas.pojo.Mascota;
+import com.omar_hidrogo_local.mascotas.presentador.IRecyclerViewFragmentPresent;
+import com.omar_hidrogo_local.mascotas.presentador.RecyclerViewFragmentPresent;
 
 import java.util.ArrayList;
 
-public class FragmentPerfilDog extends Fragment {
+public class FragmentPerfilDog extends Fragment{
 
     //Lista de Mascotas
     private ArrayList<Mascota> mascotas;
 
     //variable de lista Mascotas
     private RecyclerView listaMascotas;
+
+
 
 
     @Nullable
@@ -35,6 +39,7 @@ public class FragmentPerfilDog extends Fragment {
 
         //enlazar la variable de tipo RecyclerView al id del layout
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvPerfilMascotas);
+
 
         //declarar el administrador del recyclerview
        /* LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -65,7 +70,7 @@ public class FragmentPerfilDog extends Fragment {
         mascotas = new ArrayList<Mascota>();
 
         //Se llena el arreglo por medio del constructor creado en la clase Mascota
-        mascotas.add(new Mascota(R.drawable.pp2, "29"));
+       /* mascotas.add(new Mascota(R.drawable.pp2, "29"));
         mascotas.add(new Mascota(R.drawable.pp2, "15"));
         mascotas.add(new Mascota(R.drawable.pp2, "25"));
         mascotas.add(new Mascota(R.drawable.pp2, "5"));
@@ -73,8 +78,9 @@ public class FragmentPerfilDog extends Fragment {
         mascotas.add(new Mascota(R.drawable.pp2, "8"));
         mascotas.add(new Mascota(R.drawable.pp2, "30"));
         mascotas.add(new Mascota(R.drawable.pp2, "20"));
-        mascotas.add(new Mascota(R.drawable.pp2, "8"));
+        mascotas.add(new Mascota(R.drawable.pp2, "8"));*/
     }
+
 
 
 }

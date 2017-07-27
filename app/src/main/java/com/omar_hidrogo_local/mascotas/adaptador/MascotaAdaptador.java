@@ -6,9 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.omar_hidrogo_local.mascotas.db.ConstructorMascotas;
 import com.omar_hidrogo_local.mascotas.pojo.Mascota;
 import com.omar_hidrogo_local.mascotas.R;
 
@@ -53,18 +57,29 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     //Se Asocia cada elemento de la lista con cada vista
     @Override
-    public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
     final Mascota mascota = mascotas.get(position);
 
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvnombremascota.setText(mascota.getNombre());
-        mascotaViewHolder.tvlikes.setText(mascota.getLikes());
+        mascotaViewHolder.tvlikes.setText(String.valueOf(mascota.getLikes())+" Likes");
 
         if ((position%2)==0){
             mascotaViewHolder.imgFoto.setBackgroundColor(Color.parseColor("#fa689a"));
         }else {
             mascotaViewHolder.imgFoto.setBackgroundColor(Color.parseColor("#6379f9"));
         }
+
+        mascotaViewHolder.btnlike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity," Diste Like a "+mascota.getNombre(),Toast.LENGTH_SHORT).show();
+
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+                mascotaViewHolder.tvlikes.setText(String.valueOf(constructorMascotas.obtenerLikesMascotas(mascota)+ " Likes"));
+            }
+        });
     }
 
     //Se declara el tamano de la lista
@@ -79,6 +94,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         private ImageView imgFoto;
         private TextView tvnombremascota;
         private TextView tvlikes;
+        private ImageButton btnlike;
 
 
         //Constructor heredado de RecyclerView.ViewHolder
@@ -87,6 +103,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             imgFoto         = (ImageView) itemView.findViewById(R.id.imgFoto);
             tvnombremascota = (TextView) itemView.findViewById(R.id.tvNombreMascota);
             tvlikes         = (TextView) itemView.findViewById(R.id.tvlikes);
+            btnlike         = (ImageButton) itemView.findViewById(R.id.btnlike);
         }
     }
 }

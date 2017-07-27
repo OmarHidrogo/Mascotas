@@ -62,10 +62,10 @@
                 android:id="@+id/btnwithlike"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/bone2"
-                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_centerVertical="true"
+                android:background="@drawable/bone2" />
 
         </RelativeLayout>
 
