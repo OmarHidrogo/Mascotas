@@ -20,6 +20,8 @@ public class BaseDatos  extends SQLiteOpenHelper{
     //se declara variable tipo Context
     private  Context context;
 
+    private int campos = 0;
+
     //se crea el constructor
     public BaseDatos(Context context) {
 
@@ -97,8 +99,14 @@ public class BaseDatos  extends SQLiteOpenHelper{
 
     public void insertarMascotas(ContentValues contentValues){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.insert(ConstanteBaseDatos.TABLE_MASCOTAS, null, contentValues);
-        db.close();
+
+        Cursor numT = db.rawQuery("SELECT * FROM "+ConstanteBaseDatos.TABLE_MASCOTAS, null);
+        int n = numT.getCount();
+        if(n<= 8){
+            db.insert(ConstanteBaseDatos.TABLE_MASCOTAS, null, contentValues);
+            db.close();
+        }
+
     }
 
 
@@ -129,5 +137,16 @@ public class BaseDatos  extends SQLiteOpenHelper{
 
         return likes;
     }
+
+
+   /* public void isTableExist(String mascotas){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT DISTINCT mascotas from mascotas WHERE mascotas = '"+ mascotas + "'", null);
+        if(cursor != null){
+            if(cursor.getCount() > 0){
+                campos = cursor.getCount();
+        }
+        }
+    }*/
 
 }
