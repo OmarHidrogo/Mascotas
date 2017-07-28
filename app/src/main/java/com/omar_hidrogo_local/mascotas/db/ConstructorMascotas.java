@@ -65,7 +65,7 @@ public class ConstructorMascotas {
 
         db.insertarMascotas(contentValues);
 
-        contentValues = new ContentValues();
+        /*contentValues = new ContentValues();
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_NOMBRE, "COCO");
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.p10);
 
@@ -87,7 +87,7 @@ public class ConstructorMascotas {
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_NOMBRE, "QUIQUI");
         contentValues.put(ConstanteBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.p13);
 
-        db.insertarMascotas(contentValues);
+        db.insertarMascotas(contentValues);*/
     }
 
     public void darLikeMascota (Mascota mascota){

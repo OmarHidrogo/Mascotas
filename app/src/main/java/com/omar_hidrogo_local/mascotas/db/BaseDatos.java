@@ -102,7 +102,7 @@ public class BaseDatos  extends SQLiteOpenHelper{
 
         Cursor numT = db.rawQuery("SELECT * FROM "+ConstanteBaseDatos.TABLE_MASCOTAS, null);
         int n = numT.getCount();
-        if(n<= 8){
+        if(n<= 4){
             db.insert(ConstanteBaseDatos.TABLE_MASCOTAS, null, contentValues);
             db.close();
         }
