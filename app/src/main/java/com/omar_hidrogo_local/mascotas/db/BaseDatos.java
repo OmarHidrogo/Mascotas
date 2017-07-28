@@ -97,9 +97,33 @@ public class BaseDatos  extends SQLiteOpenHelper{
         return  mascotas;
     }
 
+    public ArrayList<Mascota> obtenerTopMascotas(){
+        ArrayList<Mascota> mascotas = new ArrayList<>();
+        //DECLARAR LA QUERY DE  LOS RANKING MASCOTAS
+
+        String querytop ="SELECT TOP 5 id_mascotas SUM (numero_likes) AS 'TOTAL' FROM mascota_likes GROUP BY  id_mascotas ORDER BY TOTAL DESC";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor registros = db.rawQuery(querytop, null);
+
+        while(registros.moveToNext()){
+            Mascota mascotaActual = new Mascota();
+            mascotaActual.setId(registros.getInt(0));
+            mascotaActual.setLikes(1);
+
+            String query = "SELECT nombre,foto FROM mascotas WHERE id = "+mascotaActual.getId();
+            Cursor r = db.rawQuery(query, null);
+            if (r.moveToNext()){
+                mascotaActual.setNombre(r.getString(0));
+                mascotaActual.setFoto(r.getInt(1));
+            }
+            mascotas.add(mascotaActual);
+        }
+        db.close();
+        return mascotas;
+    }
+
     public void insertarMascotas(ContentValues contentValues){
         SQLiteDatabase db = this.getWritableDatabase();
-
         Cursor numT = db.rawQuery("SELECT * FROM "+ConstanteBaseDatos.TABLE_MASCOTAS, null);
         int n = numT.getCount();
         if(n<= 8){
@@ -137,16 +161,5 @@ public class BaseDatos  extends SQLiteOpenHelper{
 
         return likes;
     }
-
-
-   /* public void isTableExist(String mascotas){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT DISTINCT mascotas from mascotas WHERE mascotas = '"+ mascotas + "'", null);
-        if(cursor != null){
-            if(cursor.getCount() > 0){
-                campos = cursor.getCount();
-        }
-        }
-    }*/
 
 }

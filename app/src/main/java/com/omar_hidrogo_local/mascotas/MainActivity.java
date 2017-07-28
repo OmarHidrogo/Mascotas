@@ -1,5 +1,6 @@
 package com.omar_hidrogo_local.mascotas;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import com.omar_hidrogo_local.mascotas.adaptador.PageAdapter;
 import com.omar_hidrogo_local.mascotas.fragment.FragmentPerfilDog;
 import com.omar_hidrogo_local.mascotas.fragment.Fragment_RecyclerView;
+import com.omar_hidrogo_local.mascotas.fragment.Fragment_RecyclerViewMascotasTopLike;
 
 import java.util.ArrayList;
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private Activity activity;
 
 
     @Override
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Fragment_RecyclerView());
-        fragments.add(new FragmentPerfilDog());
+        fragments.add(new Fragment_RecyclerViewMascotasTopLike());
         return fragments;
     }
 
@@ -79,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.top:
-                Intent intent = new Intent(this, Mascotas_Likes.class);
+                Intent intent = new Intent(this,Mascotas_Likes.class);
                 this.startActivity(intent);
                 break;
             case R.id.mContact:

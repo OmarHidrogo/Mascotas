@@ -42,7 +42,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Actionbar"></activity>
+        <activity android:name=".Actionbar" />
+       <activity android:name=".fragment.Fragment_RecyclerViewMascotasTopLike"></activity>
     </application>
 
 </manifest>

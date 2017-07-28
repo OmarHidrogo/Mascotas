@@ -32,6 +32,12 @@ public class ConstructorMascotas {
         return db.obtenerTodasLasMascotas();
     }
 
+    public ArrayList<Mascota>obtenerTopLike(){
+
+        BaseDatos db = new BaseDatos(context);
+        return db.obtenerTopMascotas();
+    }
+
     public void insertarDiezMascotas (BaseDatos db){
 
 
