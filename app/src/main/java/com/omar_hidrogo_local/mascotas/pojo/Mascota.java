@@ -6,37 +6,45 @@ package com.omar_hidrogo_local.mascotas.pojo;
 
 public class Mascota {
     //Se declara las variables
-    private int id;
-    private int foto;
-    private String nombre;
-    private int likes;
+    private String id;
+    private String nombreCompleto;
+    private String urlFoto;
+    private int likes=0;
+    private String Usuario;
 
     //Se declara el constructor de las dos variables
-    public Mascota(int foto, String nombre, int likes) {
-        this.foto = foto;
-        this.nombre = nombre;
-        this.likes=likes;
+    public Mascota(String urlFoto, String nombreCompleto, int likes) {
+        this.urlFoto = urlFoto;
+        this.nombreCompleto = nombreCompleto;
+        this.likes = likes;
     }
 
-    public Mascota (){
+    public Mascota() {
 
     }
 
-    //Se declara los geter y seter
-    public int getFoto() {
-        return foto;
+    public String getId() {
+        return id;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 
     public int getLikes() {
@@ -47,12 +55,12 @@ public class Mascota {
         this.likes = likes;
     }
 
-    public int getId() {
-        return id;
+    public String getUsuario() {
+        return Usuario;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUsuario(String usuario) {
+        Usuario = usuario;
     }
 }
 

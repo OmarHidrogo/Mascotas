@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mAbout:
                 Intent intent3 = new Intent(this, Acerca_de.class);
                 this.startActivity(intent3);
+            case R.id.settings:
+                Intent intent4 = new Intent(this, Login.class);
+                this.startActivity(intent4);
 
         }
       return super.onOptionsItemSelected(item);

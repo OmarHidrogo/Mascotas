@@ -7,5 +7,6 @@ package com.omar_hidrogo_local.mascotas.presentador;
 public interface IRecyclerViewFragmentPresent {
 
     public void obtenerMascotasBaseDatos();
+    public void obtenerMediosRecientes();
     public void mostrarMascotasRV();
 }

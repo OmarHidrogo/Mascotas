@@ -14,6 +14,8 @@ public interface IRecyclerViewFragmentView {
     //metodo para generar el liner layout  de forma vertical
     public void generarLinerLayoutVertical();
 
+    public void generarGridLayout();
+
     //metodo para devolver mascotas Adaptador  genera un  adaptador
     public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas);
 

@@ -3,6 +3,7 @@ package com.omar_hidrogo_local.mascotas.fragment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -74,6 +75,12 @@ public class Fragment_RecyclerView extends Fragment implements IRecyclerViewFrag
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public void generarGridLayout() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2 );
+        listaMascotas.setLayoutManager(gridLayoutManager);
     }
 
     @Override
