@@ -86,9 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(this, Contacto.class);
                 this.startActivity(intent2);
                 break;
-            case R.id.mAbout:
+            case R.id.acerca:
                 Intent intent3 = new Intent(this, Acerca_de.class);
                 this.startActivity(intent3);
+                break;
             case R.id.settings:
                 Intent intent4 = new Intent(this, Login.class);
                 this.startActivity(intent4);

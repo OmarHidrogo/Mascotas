@@ -6,32 +6,34 @@
     tools:context=".MainActivity">
 
     <item
+        android:id="@+id/top"
+        android:title="@string/top"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/estrellas">
+
+    </item>
+
+    <item
         android:id="@+id/mContact"
-        android:orderInCategory="99"
+        android:orderInCategory="101"
         android:title="@string/menu_contact">
     </item>
 
    <item
-       android:id="@+id/mAbout"
-        android:orderInCategory="100"
+       android:id="@+id/acerca"
+        android:orderInCategory="102"
        android:title="@string/menu_about">
     </item>
 
     <item
         android:id="@+id/settings"
-        android:orderInCategory="101"
+        android:orderInCategory="103"
         android:title="@string/settings">
     </item>
 
 
-    <item
-        android:id="@+id/top"
-        android:title="@string/top"
-        android:orderInCategory="102"
-        app:showAsAction="always"
-        android:icon="@drawable/estrellas">
 
-    </item>
 
 
 </menu>

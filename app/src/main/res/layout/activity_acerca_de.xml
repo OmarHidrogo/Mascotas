@@ -7,9 +7,9 @@
     android:layout_height="match_parent">
 
 
-<include
-    android:id="@+id/actionBarAcercade"
-    layout="@layout/actionbar"></include>
+    <include
+        android:id="@+id/actionBarAcercade"
+        layout="@layout/actionbar" />
 
 <RelativeLayout
     android:layout_below="@id/actionBarAcercade"
