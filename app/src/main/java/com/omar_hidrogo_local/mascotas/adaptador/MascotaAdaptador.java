@@ -66,11 +66,11 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         Picasso.with(activity)
                 .load(mascota.getUrlFoto())
                 .placeholder(R.drawable.p2)
-                .into(mascotaViewHolder.imgFoto);
+                .into(mascotaViewHolder.imgFotop);
 
        /* mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvnombremascota.setText(mascota.getNombre());*/
-        mascotaViewHolder.tvlikes.setText(String.valueOf(mascota.getLikes()));
+        mascotaViewHolder.tvlikesp.setText(String.valueOf(mascota.getLikes()));
 
         /*if ((position%2)==0){
             mascotaViewHolder.imgFoto.setBackgroundColor(Color.parseColor("#fa689a"));
@@ -78,7 +78,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             mascotaViewHolder.imgFoto.setBackgroundColor(Color.parseColor("#6379f9"));
         }*/
 
-        mascotaViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
+        mascotaViewHolder.imgFotop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, DetalleMascota.class);
@@ -109,17 +109,17 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     public class MascotaViewHolder extends RecyclerView.ViewHolder {
 
         //Declarar las variables de los views en este caso las imagenes de las mascotas y el nombre
-        private ImageView imgFoto;
+        private ImageView imgFotop;
        // private TextView tvnombremascota;
-        private TextView tvlikes;
+        private TextView tvlikesp;
         //private ImageButton btnlike;
 
 
         //Constructor heredado de RecyclerView.ViewHolder
         public MascotaViewHolder(View itemView) {
             super(itemView);
-            imgFoto         = (ImageView) itemView.findViewById(R.id.imgFoto);
-            tvlikes         = (TextView)  itemView.findViewById(R.id.tvLikes1);
+            imgFotop         = (ImageView) itemView.findViewById(R.id.imgFoto);
+            tvlikesp         = (TextView)  itemView.findViewById(R.id.tvLikes1);
            /* tvnombremascota = (TextView) itemView.findViewById(R.id.tvNombreMascota);*/
           //  btnlike         = (ImageButton) itemView.findViewById(R.id.btnlike);
         }

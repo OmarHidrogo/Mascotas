@@ -1,6 +1,7 @@
 package com.omar_hidrogo_local.mascotas.presentador;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -49,14 +50,23 @@ public class RecyclerViewFragmentPresent implements IRecyclerViewFragmentPresent
         RestApiAdapter restApiAdapter = new RestApiAdapter();                                           //conexion a web services
         Gson gsonMediaRecent = restApiAdapter.construyeGsonDeserializadorMediaRecent();                 //se prepara objeto Gson  realizando una deserializadorpersonalizado
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonMediaRecent);//Establecemos la conexion y pasamos el objeto gsonMediaRecent
-        Call<MascotaResponse> mascotaResponseCall = endpointsApi.getRecentMedia();
+
+        SharedPreferences miPreferencia = context.getSharedPreferences("instagram", context.MODE_PRIVATE);
+        String idInstagram = miPreferencia.getString("id","");
+
+        //Call<MascotaResponse> mascotaResponseCall = endpointsApi.getRecentMedia();
+        Call<MascotaResponse> mascotaResponseCall;
+        if(idInstagram == "")
+            mascotaResponseCall = endpointsApi.getRecentMedia();
+        else
+            mascotaResponseCall = endpointsApi.getMediaLiked();
 
         mascotaResponseCall.enqueue(new Callback<MascotaResponse>() {
             //eventos de la peticion
             @Override
             public void onResponse(Call<MascotaResponse> call, Response<MascotaResponse> response) {
-                MascotaResponse contactoResponse = response.body();
-                mascotas = contactoResponse.getMascotas();
+                MascotaResponse mascotaResponse = response.body();
+                mascotas = mascotaResponse.getMascotas();
                 mostrarMascotasRV();
             }
 

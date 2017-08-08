@@ -32,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
@@ -57,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(new Fragment_RecyclerView());
-        fragments.add(new FragmentPerfilDog());
+          fragments.add(new Fragment_RecyclerView());
+          fragments.add(new FragmentPerfilDog());
         return fragments;
     }
 

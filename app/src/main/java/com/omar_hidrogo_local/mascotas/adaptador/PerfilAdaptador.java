@@ -5,11 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.omar_hidrogo_local.mascotas.R;
 import com.omar_hidrogo_local.mascotas.pojo.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -19,12 +22,12 @@ import java.util.ArrayList;
 
 public class PerfilAdaptador  extends RecyclerView.Adapter<PerfilAdaptador.PerfilViewHolder>{
 
-    ArrayList<Mascota> mascotas;
+    ArrayList<Mascota> masc;
     Activity activity;
 
 
-    public PerfilAdaptador(ArrayList<Mascota> mascotas, Activity activity){
-        this.mascotas=mascotas;
+    public PerfilAdaptador(ArrayList<Mascota> masc, Activity activity){
+        this.masc=masc;
         this.activity=activity;
 
     }
@@ -42,28 +45,43 @@ public class PerfilAdaptador  extends RecyclerView.Adapter<PerfilAdaptador.Perfi
 
     @Override
     public void onBindViewHolder(PerfilViewHolder perfilViewHolder, int position) {
-        final Mascota mascota = mascotas.get(position);
+        final Mascota mascota = masc.get(position);
 
-      //  perfilViewHolder.imgFoto.setImageResource(mascota.getFoto());
-        perfilViewHolder.tvlikes.setText(mascota.getLikes());
+        //perfilViewHolder.imgFoto.setImageResource(mascota.getFoto());
+        perfilViewHolder.tvlikespm.setText(String.valueOf(mascota.getLikes()));
+       // perfilViewHolder.tvlikes.setText(mascota.getLikes());
+
+        Picasso.with(activity)
+                .load(mascota.getUrlFoto())
+                .placeholder(R.drawable.p2)
+                .into(perfilViewHolder.imgFotopm);
+
+        perfilViewHolder.btnwithlikeperfilpm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(activity, "Like", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return mascotas.size();
+        return masc.size();
     }
 
     public class PerfilViewHolder extends RecyclerView.ViewHolder {
 
         //Declarar las variables de los views en este caso las imagenes de las mascotas y el nombre
-        private ImageView imgFoto;
-        private TextView tvlikes;
+        private ImageView imgFotopm;
+        private TextView tvlikespm;
+        private ImageButton btnwithlikeperfilpm;
 
         public PerfilViewHolder(View itemView) {
             super(itemView);
-            imgFoto         = (ImageView) itemView.findViewById(R.id.imgperfilFoto);
-            tvlikes         = (TextView) itemView.findViewById(R.id.tvperfillikes);
+            imgFotopm                   = (ImageView) itemView.findViewById(R.id.imgperfilFotopm);
+            tvlikespm                   = (TextView) itemView.findViewById(R.id.tvperfillikespm);
+            btnwithlikeperfilpm         = (ImageButton) itemView.findViewById(R.id.btnwithlikeperfilpm);
         }
     }
 }
