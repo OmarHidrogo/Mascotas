@@ -32,6 +32,12 @@
         android:title="@string/settings">
     </item>
 
+    <item
+        android:id="@+id/notification"
+        android:orderInCategory="104"
+        android:title="@string/Notification">
+    </item>
+
 
 
 
