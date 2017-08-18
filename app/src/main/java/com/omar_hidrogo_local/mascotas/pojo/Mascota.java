@@ -7,16 +7,19 @@ package com.omar_hidrogo_local.mascotas.pojo;
 public class Mascota {
     //Se declara las variables
     private String id;
+    private String idmedia;
     private String nombreCompleto;
     private String urlFoto;
     private int likes=0;
     private String Usuario;
+    private String username;
 
     //Se declara el constructor de las dos variables
-    public Mascota(String urlFoto, String nombreCompleto, int likes) {
+    public Mascota(String urlFoto, String idmedia, String nombreCompleto, int likes) {
         this.urlFoto = urlFoto;
         this.nombreCompleto = nombreCompleto;
         this.likes = likes;
+        this.idmedia = idmedia;
     }
 
     public Mascota() {
@@ -61,6 +64,22 @@ public class Mascota {
 
     public void setUsuario(String usuario) {
         Usuario = usuario;
+    }
+
+    public String getIdmedia() {
+        return idmedia;
+    }
+
+    public void setIdmedia(String idmedia) {
+        this.idmedia = idmedia;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
 

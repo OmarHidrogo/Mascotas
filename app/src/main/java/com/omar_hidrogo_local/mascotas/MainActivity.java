@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 UsuarioResponse usuarioResponse = response.body();
                 Log.d("ID_FIREBASE", usuarioResponse.getId());
                 Log.d("TOKEN_FIREBASE", usuarioResponse.getToken());
-                Log.d("ID_INSTAGRAM_USUARIO", usuarioResponse.getId_usuario_instagram());
+                Log.d("ID_INSTAGRAM_USUARIO", usuarioResponse.getUsuario_instagram());
             }
 
             @Override

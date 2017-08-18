@@ -51,10 +51,14 @@ public class RecyclerViewFragmentPresent implements IRecyclerViewFragmentPresent
         Gson gsonMediaRecent = restApiAdapter.construyeGsonDeserializadorMediaRecent();                 //se prepara objeto Gson  realizando una deserializadorpersonalizado
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonMediaRecent);//Establecemos la conexion y pasamos el objeto gsonMediaRecent
 
-        SharedPreferences miPreferencia = context.getSharedPreferences("instagram", context.MODE_PRIVATE);
-        String idInstagram = miPreferencia.getString("id","");
+       /* SharedPreferences miPreferencia = context.getSharedPreferences("instagram", context.MODE_PRIVATE);
+        String idInstagram = miPreferencia.getString("id","");*/
+
+
 
         Call<MascotaResponse> mascotaResponseCall = endpointsApi.getRecentMedia();
+
+
         /*Call<MascotaResponse> mascotaResponseCall;
         if(idInstagram == "")
             mascotaResponseCall = endpointsApi.getRecentMedia();
@@ -65,8 +69,13 @@ public class RecyclerViewFragmentPresent implements IRecyclerViewFragmentPresent
             //eventos de la peticion
             @Override
             public void onResponse(Call<MascotaResponse> call, Response<MascotaResponse> response) {
+
                 MascotaResponse mascotaResponse = response.body();
                 mascotas = mascotaResponse.getMascotas();
+                SharedPreferences miPreferenciaUser = context.getSharedPreferences("mascota", context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = miPreferenciaUser.edit();
+                editor.putString("id", mascotas.get(0).getId());
+                editor.commit();
                 mostrarMascotasRV();
             }
 

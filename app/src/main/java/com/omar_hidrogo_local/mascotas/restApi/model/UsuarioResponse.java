@@ -7,12 +7,14 @@ package com.omar_hidrogo_local.mascotas.restApi.model;
 public class UsuarioResponse {
     private String id;
     private String token;
-    private String id_usuario_instagram;
+    private String usuario_instagram;
+    private String foto_instagram;
 
-    public UsuarioResponse(String id, String token, String id_usuario_instagram) {
+    public UsuarioResponse(String id, String token, String usuario_instagram, String foto_instagram) {
         this.id = id;
         this.token = token;
-        this.id_usuario_instagram = id_usuario_instagram;
+        this.usuario_instagram = usuario_instagram;
+        this.foto_instagram = foto_instagram;
     }
 
     public UsuarioResponse() {
@@ -34,11 +36,19 @@ public class UsuarioResponse {
         this.token = token;
     }
 
-    public String getId_usuario_instagram() {
-        return id_usuario_instagram;
+    public String getUsuario_instagram() {
+        return usuario_instagram;
     }
 
-    public void setId_usuario_instagram(String id_usuario_instagram) {
-        this.id_usuario_instagram = id_usuario_instagram;
+    public void setUsuario_instagram(String usuario_instagram) {
+        this.usuario_instagram = usuario_instagram;
+    }
+
+    public String getFoto_instagram() {
+        return foto_instagram;
+    }
+
+    public void setFoto_instagram(String foto_instagram) {
+        this.foto_instagram = foto_instagram;
     }
 }

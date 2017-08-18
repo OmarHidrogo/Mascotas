@@ -84,6 +84,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                 Intent intent = new Intent(activity, DetalleMascota.class);
                 intent.putExtra("url", mascota.getUrlFoto());
                 intent.putExtra("likes", mascota.getLikes());
+                intent.putExtra("idmedia",mascota.getIdmedia());
                 activity.startActivity(intent);
             }
         });
