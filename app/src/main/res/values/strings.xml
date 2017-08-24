@@ -9,6 +9,7 @@
     <string name="menu_contact">Contacto</string>
     <string name="settings">Configurar Cuenta</string>
     <string name="Notification">Recibir Notificacion</string>
+    <string name="Seguir">Seguir</string>
     <string name="top">top</string>
 
     <string name="nombre">Nombre Completo</string>
@@ -21,6 +22,10 @@
     <string name="pets">MASCOTAS</string>
 
     <string name="login">Escribe tu Usuario</string>
+
+    <string name="texto_accion_seguir">Seguir</string>
+    <string name="texto_accion_noseguri">Dejas de Seguir</string>
+    <string name="verperfil">Ver Perfil</string>
 
 
     <string name="biografia">Omar de Jesus Hidrogo Muñoz (Torreon, Coahuila, 8 de diciembre de 1990     Actualmente Ing. en Tecnologias de la Informacion y Comunicacion
