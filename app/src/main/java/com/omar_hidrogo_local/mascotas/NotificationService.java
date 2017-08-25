@@ -24,6 +24,7 @@ public class NotificationService extends FirebaseMessagingService {
 
     public static final String TAG = "firebase";
     public static final int NOTIFICATION_ID = 001;
+    public static final int NOTIFICATION2_ID = 002;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -32,26 +33,18 @@ public class NotificationService extends FirebaseMessagingService {
         Log.d(TAG, "Notificacion Message Body: " + remoteMessage.getNotification().getBody());
 
         Intent i = new Intent();
-        i.setAction("FOLLOW");
-       // i.setAction("UNFOLLOW");
+        i.setAction("TOQUE_ANIMAL");
 
-        //Intent i = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent =   PendingIntent.getActivity(this,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
-        //PendingIntent pendingIntent2 =   PendingIntent.getActivity(this,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent =   PendingIntent.getBroadcast(this,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
 
         Uri sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        NotificationCompat.Action actionfollow = new NotificationCompat.Action.Builder(R.drawable.ic_full_hand,
+        NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_full_hand,
                 getString(R.string.texto_accion_seguir),pendingIntent)
                 .build();
-
-        /*NotificationCompat.Action actionunfollow = new NotificationCompat.Action.Builder(R.drawable.ic_full_hand_no,
-                getString(R.string.texto_accion_noseguri),pendingIntent2)
-                .build();*/
-
-       /* NotificationCompat.Action actionperfil = new NotificationCompat.Action.Builder(R.drawable.ic_full_user,
-                getString(R.string.verperfil),pendingIntent)
-                .build();*/
+        NotificationCompat.Action action2 = new NotificationCompat.Action.Builder(R.drawable.ic_full_hand_no,
+                getString(R.string.texto_accion_noseguri),pendingIntent)
+                .build();
 
         NotificationCompat.WearableExtender wearableExtender =
                 new NotificationCompat.WearableExtender()
@@ -69,14 +62,14 @@ public class NotificationService extends FirebaseMessagingService {
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
-                .extend(wearableExtender.addAction(actionfollow))
-                //.extend(wearableExtender.addAction(actionunfollow))
-                //.extend(wearableExtender.addAction(actionperfil))
-                        //.addAction(R.drawable.ic_full_hand,getString(R.string.texto_accion_toque), pendingIntent)
+                .extend(wearableExtender.addAction(action))
+                .extend(wearableExtender.addAction(action2))
+                //.addAction(R.drawable.ic_full_hand,getString(R.string.texto_accion_toque), pendingIntent)
                 ;
+
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.notify(NOTIFICATION_ID, notificacion.build());
-
+        notificationManager.notify(NOTIFICATION2_ID, notificacion.build());
     }
 }

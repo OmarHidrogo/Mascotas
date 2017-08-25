@@ -22,26 +22,22 @@ import retrofit2.Response;
 
 public class  RelationshipFollow extends BroadcastReceiver {
 
-    private Context context;
-    private static final String ANIMAL_RECEPTOR = "gato";
-    private static final String ANIMAL_EMISOR = "perroCF";
+    //private Context context;
+    private static final String ANIMAL_RECEPTOR = "jORGE AVILA";
+    private static final String ANIMAL_EMISOR = "jORGE AVILA";
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        String ACCION_KEY = "FOLLOW";
-        /*String ACCION_KEY_VER_PERFIL = "VER_PERFIL";
-        String ACCION_KEY_VER_USUARIO = "VER_USUARIO";*/
+        String ACCION_KEY = "TOQUE_ANIMAL";
+        String accion = intent.getAction();
 
-        String actionfollow = intent.getAction();
-
-        if (ACCION_KEY.equals(actionfollow)) {
-            //changerelationship();
+        if(ACCION_KEY.equals(accion)){
             enviarNotificacion();
-            Toast.makeText(context, "Siguiendo "+ ANIMAL_RECEPTOR, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, " Diste un toque a  JORGE AVILA" , Toast.LENGTH_SHORT).show();
         }
     }
 
-    private  void changerelationship(){
+   /* private  void changerelationship(){
         SharedPreferences miPreferenciausuarioreciente = context.getSharedPreferences("mascota", Context.MODE_PRIVATE);
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         EndpointsApi endpoints = restApiAdapter.establecerConexionRestApiInstagramsinDeserializar();
@@ -60,7 +56,10 @@ public class  RelationshipFollow extends BroadcastReceiver {
 
             }
         });
-    }
+    }*/
+
+
+
 
 
     public void enviarNotificacion(){
@@ -68,7 +67,7 @@ public class  RelationshipFollow extends BroadcastReceiver {
         //final UsuarioResponse usuarioResponse = new UsuarioResponse("-KrpZtICwQAjRLrUBCof","123","5810080353","123");
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         EndpointsApi endpoints = restApiAdapter.establecerConexionRestAPI();
-        Call<UsuarioResponse> usuarioResponseCall = endpoints.toquerelationship("-KsL0hOQ8LERawgjrUUP","jorge avila");/*usuarioResponse.getAnimal());*/
+        Call<UsuarioResponse> usuarioResponseCall = endpoints.toquephoto("-KsL0hOQ8LERawgjrUUP",ANIMAL_EMISOR);/*usuarioResponse.getAnimal());*/
         usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
             @Override
             public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
